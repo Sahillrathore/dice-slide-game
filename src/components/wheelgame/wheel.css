@@ -1,0 +1,6 @@
+.path1 {
+    height: 200px;
+    width: 200px;
+    /* background-color: violet; */
+    clip-path: polygon(20% 0%, 80% 0%, 60% 100%, 40% 100%);
+}
