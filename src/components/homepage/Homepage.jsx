@@ -1,7 +1,26 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Homepage = () => {
+
+  const [state, setState] = useState([]);
+
+  const fetchData = async () => {
+    try{
+      const response = await axios.get("https://strapi-backend-8hgz.onrender.com/api/users");
+      console.log('Data:', response.data);
+      return response.data;
+    }
+    catch(err) {
+      console.log(err);
+    }
+  }
+  
+  useEffect(()=>{
+    fetchData();
+  },[])
   return (
     <>
         <h1 className='text-3xl font-bold text-zinc-100'>Homepage</h1>

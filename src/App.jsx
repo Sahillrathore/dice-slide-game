@@ -4,7 +4,9 @@ import Controls from './components/dicecontrols/controls'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Homepage from './components/homepage/Homepage'
 import Wheel from './components/wheelgame/Wheel'
-import { diceProvider } from './context/dicecontext'
+import { diceContext } from './context/dicecontext'
+// import { diceprovider } from './context/dicecontext'
+
 function App() {
 
     const [sliderValue, setSliderValue] = useState(20);
@@ -40,15 +42,18 @@ function App() {
     }
 
   return (
-    <diceProvider value={{sliderValue, setSliderValue, winValue, setwinValue, prevBets, setPrevBets, diceButtonClick}}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Homepage/>} />
-          <Route path='dice' element={<Dicerange/>} />
-          <Route path='wheel' element={<Wheel/>} />
-        </Routes>
-      </BrowserRouter>
-    </diceProvider>
+    
+
+      <diceContext.Provider value={{sliderValue, setSliderValue, winValue, setwinValue, prevBets, setPrevBets, diceButtonClick}} >
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Homepage/>} />
+            <Route path='dice' element={<Dicerange/>} />
+            <Route path='wheel' element={<Wheel/>} />
+          </Routes>
+        </BrowserRouter>
+      </diceContext.Provider>
+    
   )
 }
 

@@ -6,7 +6,7 @@ export const diceContext = createContext({
 
 });
 
-export const diceProvider = diceContext.Provider;
+export const diceprovider = diceContext.Provider;
 
 const useDiceContext = () => {
     return useContext(diceContext);
