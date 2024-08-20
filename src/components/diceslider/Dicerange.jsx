@@ -46,7 +46,7 @@ const Dicerange = () => {
                 {
                     prevBets?.slice(0,5).map((item, i) => (
                         
-                        <span key={i} className={`bg-white/20 py-2 w-8 text-center backdrop-blur-sm inline-block rounded-md m-1 ${i === prevBets.length - 1 ? "" : ""} ${item > winValue? "text-green-300" : "text-red-500"} `}>{item}</span>
+                        <span key={i} className={`bg-zinc-700 py-2 w-8 text-center backdrop-blur-sm inline-block rounded-md m-1 ${i === prevBets.length - 1 ? "" : ""} ${item > winValue? "text-green-300" : "text-red-500"} `}>{item}</span>
                             
                     ))
                 }
