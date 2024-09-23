@@ -50,12 +50,12 @@ const Dicerange = () => {
             <div className="button-controls m-auto w-2/4">
                 <button className='bg-red-600 hover:bg-red-500 font-semibold text-gray-900 px-6 py-2 rounded-md' onClick={
                    ()=>{
-                    diceButtonClick
-                    handleSound
+                    diceButtonClick();
+                    handleSound();
                    }
                 } 
                 >Play</button>
-              <audio ref={soundRef} src="click-sound.mp3" />
+                  <audio ref={soundRef} src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3" />
             </div>
 
             <div className="previous-results m-auto w-2/4 text-zinc-200 font-medium flex justify-end">
