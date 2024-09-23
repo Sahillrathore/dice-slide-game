@@ -23,7 +23,8 @@ const Dicerange = () => {
   return (
     <>
         <section className='bg-gray-800 px-8 py-8 '>
-            {/* <h1 className='text-3xl font-bold text-lime-500 text-center'>Dice Game</h1> */}
+
+            <h1 className='text-3xl font-bold text-lime-500 text-center'>Dice Game</h1>
 
             <div className="range-game-container w-2/4 m-auto mt-12">
 
