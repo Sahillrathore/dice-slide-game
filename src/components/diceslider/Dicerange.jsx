@@ -1,15 +1,24 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import useDiceContext from '../../context/dicecontext';
 
 const Dicerange = () => {
 
     const {sliderValue, setSliderValue, winValue, setwinValue, prevBets, setPrevBets, diceButtonClick} = useDiceContext()    
 
+    const soundRef = useRef(null);
+
    
     const changeHandler = (e) => {
         const value = e.target.value;
         setwinValue(value)
     }
+
+    const handleSound = () => {
+        if (soundRef.current) {
+            soundRef.current.currentTime = 0; // Reset sound to start
+            soundRef.current.play(); // Play sound
+        }
+    };
     
   return (
     <>
@@ -39,7 +48,14 @@ const Dicerange = () => {
 
         <section className='w-2/4 flex justify-between m-auto'>
             <div className="button-controls m-auto w-2/4">
-                <button className='bg-red-600 hover:bg-red-500 font-semibold text-gray-900 px-6 py-2 rounded-md' onClick={diceButtonClick} >Play</button>
+                <button className='bg-red-600 hover:bg-red-500 font-semibold text-gray-900 px-6 py-2 rounded-md' onClick={
+                   ()=>{
+                    diceButtonClick
+                    handleSound
+                   }
+                } 
+                >Play</button>
+              <audio ref={soundRef} src="click-sound.mp3" />
             </div>
 
             <div className="previous-results m-auto w-2/4 text-zinc-200 font-medium flex justify-end">
