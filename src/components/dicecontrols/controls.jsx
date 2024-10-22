@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Controls = () => {
+    const [loading, setLoading] = useState(false);
 
     const handler = () => {
         const randomValue = Math.floor(Math.random()*100)+1;
